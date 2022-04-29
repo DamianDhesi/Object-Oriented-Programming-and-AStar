@@ -1,0 +1,19 @@
+Implementation of AStar and Object Oriented Design by Damian Dhesi
+
+This program was given as a project for a Java class where we were assigned the goal of taking a 
+large file base and redesigning it to be in an Object Oriented format. The program is a sort of mini
+game where a bunch of lumber jacks run around cutting down trees as faires touch the stumps to cause 
+the trees to regrow after being cut down.  In addition to reformatting the code, we were tasked
+with creating an AStar pathing algorithm for the lumber jacks and faries. 
+
+The file base orignially started with nearly all functions in a file called Functions and there was 
+no use of interfaces or abstract classes. Over the course of the class, I redesigned the files to
+follow a more Object Oriented desgin by moving the functions into their respective classes and added
+interfaces and abstract classes as needed. This progression is detailed in DESIGN where I give a 
+short description of why each function is in each class. Addtionally, the uml folder holds flow 
+charts that show the progression of the code base towards a more Object Oriented design as I made 
+changes. 
+
+After reformatting the code, I also implemented an AStar pathing strategy to allow the lumber jacks
+and fairies to move in a more intelligent manor compared to their single step pathing strategy. Both
+strategies can be viewed in the src folder. 
