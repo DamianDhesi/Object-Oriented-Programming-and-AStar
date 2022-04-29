@@ -1,0 +1,189 @@
+getCurrentImage(): PImage - As this function can take in any object and interacts with multiple objects I think it is
+best to leave it as a static method
+
+getAnimationPeriod() int - This function deals entirely with just Entities variables so it would best be in the Entity
+class
+
+nextImage() - Uses only variables from Entity so it fits well into the Entity class
+
+executeAction() - Placed in Action class since that class handles actions and their execution while eventscheduler
+scheduler action execution
+
+executeAnimationAction() - Placed in the Action class as that class deals with the executions of actions and there
+animations
+
+executeActivityAction - Placed in the Action class as it handles the execution of all actions which an activity is an
+action
+
+executeSaplingActivity - Placed in Action class as activities and their execution are handled by this class
+
+executeTreeActivity - Placed in Action class as activities and their execution are handled by this class
+
+executeFairyActivity() - Placed in Action class as activities and their execution are handled by this class
+
+executeDudeNotFullActivity() - Placed in Action class as activities and their execution are handled by this class
+
+executeDudeFullActivity() - Placed in Action class as activities and their execution are handled by this class
+
+scheduleActions - In eventscheduler since this class keeps track of actions and scheduling these actions would be one
+of the ways that is done
+
+transformNotFull - Put in Action class since it uses many action attributes and transformation is an action
+
+transformFull- Put in Action class since it uses many action attributes and transformation is an action
+
+transformPlant- Put in Action class since it uses many action attributes and transformation is an action
+
+transformTree- Put in Action class since it uses many action attributes and transformation is an action
+
+transformSapling- Put in Action class since it uses many action attributes and transformation is an action
+
+moveToFairy - Involves and action of movement and utilized in other action related methods, so this goes in the
+action class
+
+moveToNotFull- Involves and action of movement and utilized in other action related methods, so this goes in the a
+ction class
+
+moveToFull- Involves and action of movement and utilized in other action related methods, so this goes in the
+action class
+
+nextPositionFairy - Methods involves position calculations which would fit best in the Point class as that
+handles positioning
+
+nextPositionDude- Methods involves position calculations which would fit best in the Point class as that handles
+positioning
+
+adjacent - As this method involves calculations needed for movement/action methods, it made most sense to put it
+in the Action class
+
+getNumFromRange- As this method involves calculations needed for movement/action methods, it made most sense to put
+ it in the Action class
+
+scheduleEvent - Utlizes many attributes from the event class, so it is best placed in the Event class
+
+unscheduleAllEvents - This method involves the scheduleing of events so it would best be in the eventscheduler class
+
+removePendingEvent - This method involves the scheduleing of events so it would best be in the eventscheduler class
+
+updateOnTime - This method involves many attributes of eventscheduler so it would best fit in that class
+
+nextImage - uses exculusively attributes from entity so it would best fit in that class
+
+getImageList - utlizes many of the attributes in imagestore and it would make sense for imagestore to get a list of
+images
+
+loadImages - utlizes many of the attributes in imagestore and it would make sense for to get be able to load images
+
+processImageLine - depends on private varaibles in functions, so it will stay in the function class
+
+getImages - used only for processImageLine and does not fit in the other classes so it stays in functions
+
+setAlpha - not very realted to other classes and is used by processImageLine so it would make sense for it to stay in
+functions
+
+shift - involves many attributes of worldview and involves changing the world view so it would go in the world view
+class
+
+contains - involves many of the attributes of world view so it would go in the world view class
+
+load - as this is used for loading the world it would go in worldmodel as worldmodel handles the simulation
+
+processLine - involved in the imagery for the simulation so it would fit in the worldmodel class
+
+parseBackground(): boolean  - Used for the images that make up the simulation so this method would best fin in
+ worldmodel which handles the simulation
+
+parseSapling(): boolean- Used for the images that make up the simulation so this method would best fin in
+worldmodel which handles the simulation
+
+parseDude(): boolean  - Used for the images that make up the simulation so this method would best fin in
+worldmodel which handles the simulation
+
+parseFairy(): boolean   - Used for the images that make up the simulation so this method would best fin in worldmodel
+which handles the simulation
+
+parseTree(): boolean - Used for the images that make up the simulation so this method would best fin in worldmodel
+which handles the simulation
+
+parseObstacle(): boolean - Used for the images that make up the simulation so this method would best fin in worldmodel
+ which handles the simulation
+
+parseHouse(): boolean - Used for the images that make up the simulation so this method would best fin in worldmodel
+which handles the simulation
+
+tryAddEntity()   - Used for adding entites to the virtual world so it would go in worldmodel as this class handles the
+simulation
+
+withinBounds(): boolean - Would go in worldmodel as it helps determine if everything is in bounds of the simulation
+
+isOccupied(): boolea - would go in worldmodel as this helps determine the placement of entites within the simulation
+
+nearestEntity(): Optional<Entity> - calculations involving what the nearest entity is, better in point than in entities
+as point attributes are used and entities has no attribute for a list of entites
+
+distanceSquared(): int - operation involving points so it is best in the point class
+
+findNearest(): Optional<Entity> - In the point class as this class handles 2d positioning which is what is involved
+in finding the nearest entity
+
+addEntity()  - In worldmodel since the addtion of entites is needed in order to handle and run the simulation
+
+moveEntity() - In worldmodel since moving entites is an important part of handling the simulaiton which is worldmodel's
+ purpose
+
+removeEntity() - In worldmodel since removing entites is important for properly running the simulation
+
+removeEntityAt() - In worldmodel since the location of entites to be removed is improtant for simulation function
+
+getBackgroundImage(): Optional<PImage> - In worldmodel since the simulation requires background images to run
+effectively and this would best fit world model
+
+setBackground - In background as setting the background is an ability that a background class should have to
+function properly and it this method is most relavent to the background class
+
+getOccupant(): Optional<Entity> - In worldmodel as it is important for the simulation to tract the occupants
+in the simulation
+
+getOccupancyCell(): Entity - In worldmodel as the cell the occupant is on is useful for running the simulation properly
+and worldmodel handles the entities in the world
+
+setOccupancyCell() - In worldmodel as worldmodel handles the entites in the world and the cell they are on is important
+information for handling the simulation
+
+getBackgroundCell(): Background - In worldmodel as tracking the cells in the background is important for handling
+the simulation
+
+setBackgroundCell - In Background as seting the cells in the background is most relevant to the background of the
+simulation
+
+viewportToWorld - In viewport as this method ustilizes the attributes of view port and is needed for viewing the
+simulation
+
+worldToViewport - In viewport as this method ustilizes the attributes of view port and is needed for viewing the
+simulation properly
+
+clamp()   - In viewport as its calculations are important for shifting the view which is an action relavent to viewport
+
+shiftView()   - In viewport as being able to shift the view is an important function for the viewport
+
+drawBackground()   - In viewport as it draws the background for viewing the simulation
+
+drawEntities()      - In viewport as it draws the entities for viewing the simulation
+
+drawViewport()     - In viewport as the viewport itself needs to be drawn in order to view the simulation
+
+For the below events they are left in Functions as none of these functions would make sense as the instance of an
+object of other classes besdies Action and Entity. However, it also does not make sense to tie the creation of Action
+and Entity objects to an instances of said objects. Hence, they work best as static methods outside of the other
+classes.
+
+createAnimationAction(): Action
+createActivityAction(): Action
+createHouse(): Entity
+createObstacle(): Entity
+createTree(): Entity
+createStump(): Entity
+createSapling(): Entity
+createFairy(): Entity
+createDudeNotFull(): Entity
+createDudeFull(): Entity
